@@ -1,228 +1,162 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automação de Relatórios de RH | Gabriel Maia</title>
+# 📊 Métodos e Ciências dos Dados  
+## Automação de Relatórios de RH com Python
 
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        background: #0f1117;
-        color: #e6edf3;
-        line-height: 1.7;
-    }
+Projeto desenvolvido como trabalho final da disciplina **Métodos e Ciências dos Dados** da **Universidade Federal de Minas Gerais (UFMG)**.
 
-    .container {
-        max-width: 1100px;
-        margin: 60px auto;
-        padding: 50px;
-        background: #161b22;
-        border-radius: 16px;
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
-    }
+---
 
-    h1 {
-        font-size: 36px;
-        margin-bottom: 10px;
-        background: linear-gradient(90deg, #00c6ff, #0072ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+## 📌 Sobre o Projeto
 
-    h2 {
-        margin-top: 50px;
-        font-size: 22px;
-        border-left: 4px solid #0072ff;
-        padding-left: 12px;
-        color: #ffffff;
-    }
+Este projeto implementa um sistema automatizado para:
 
-    p {
-        color: #c9d1d9;
-    }
+- Extração de dados de um banco relacional (MySQL/PostgreSQL)
+- Processamento e análise de dados com Python
+- Geração de relatórios gerenciais em Excel
+- Envio automático de relatórios por e-mail
 
-    ul {
-        margin-left: 20px;
-    }
+A solução foi desenvolvida com foco na otimização de processos de **Recursos Humanos**, reduzindo tarefas manuais e aumentando a confiabilidade das informações.
 
-    li {
-        margin-bottom: 8px;
-        color: #c9d1d9;
-    }
+---
 
-    .subtitle {
-        font-size: 18px;
-        color: #8b949e;
-        margin-bottom: 25px;
-    }
+## 🏗️ Estrutura do Projeto
 
-    .tag-container span {
-        display: inline-block;
-        background: #21262d;
-        color: #58a6ff;
-        border: 1px solid #30363d;
-        padding: 6px 14px;
-        margin: 6px 6px 6px 0;
-        border-radius: 20px;
-        font-size: 13px;
-        transition: 0.3s;
-    }
+O repositório contém:
 
-    .tag-container span:hover {
-        background: #0072ff;
-        color: #fff;
-        transform: scale(1.05);
-    }
+### 📄 Documentação
+- `Trabalho_Final_Métodos_e_Ciência_de_Dados.pdf`  
+  Documento completo do projeto, incluindo fundamentação teórica, modelagem do banco e resultados.
 
-    .code-box {
-        background: #0d1117;
-        border: 1px solid #30363d;
-        padding: 15px;
-        border-radius: 10px;
-        font-family: Consolas, monospace;
-        font-size: 14px;
-        color: #58a6ff;
-        margin: 10px 0 20px 0;
-    }
+### 🗄️ Banco de Dados
+- `database.sql`  
+  Script contendo:
+  - Criação das tabelas
+  - Definição de chaves primárias e estrangeiras
+  - Inserção de dados simulados
 
-    .card {
-        background: #1c2128;
-        padding: 20px;
-        border-radius: 12px;
-        margin: 15px 0;
-        border: 1px solid #30363d;
-        transition: 0.3s;
-    }
+### 🐍 Código Python
+- Conexão com banco de dados
+- Consultas SQL dinâmicas
+- Geração de relatórios com Pandas
+- Exportação para Excel
+- Envio automatizado via SMTP
 
-    .card:hover {
-        border-color: #0072ff;
-        box-shadow: 0 0 15px rgba(0,114,255,0.3);
-    }
+---
 
-    .footer {
-        margin-top: 60px;
-        text-align: center;
-        font-size: 14px;
-        color: #8b949e;
-    }
+## 🛠️ Tecnologias Utilizadas
 
-    a {
-        color: #58a6ff;
-        text-decoration: none;
-    }
+- Python 3
+- Pandas
+- Psycopg2 / MySQL Connector
+- OpenPyXL
+- SMTPLib
+- SQL (MySQL / PostgreSQL)
+- Neon Console (PostgreSQL online)
 
-    a:hover {
-        text-decoration: underline;
-    }
+---
 
-</style>
-</head>
+## 🗃️ Estrutura do Banco de Dados
 
-<body>
+O banco de dados foi modelado para simular um sistema de gestão de RH, contendo as seguintes tabelas:
 
-<div class="container">
+- `Departamentos`
+- `Cargos`
+- `Contrato`
+- `Historico_Cargos`
+- `Historico_Situacao_Funcional`
+- `Folha_Pagamento`
+- `Ferias`
 
-<h1>Automação de Relatórios de RH</h1>
-<div class="subtitle">Projeto de Engenharia de Dados e Automação • Python • SQL</div>
+### Modelagem
 
-<p>
-Projeto desenvolvido como trabalho final da disciplina <strong>Métodos e Ciências dos Dados</strong>,
-na <strong>Universidade Federal de Minas Gerais (UFMG)</strong>.
-</p>
+- Chaves primárias compostas
+- Relacionamentos com integridade referencial
+- Controle de histórico funcional
+- Estrutura preparada para relatórios analíticos
 
-<h2>🚀 Visão Geral</h2>
+---
 
-<div class="card">
-Sistema automatizado para extração, processamento e envio de relatórios estratégicos de Recursos Humanos.
-Integra banco de dados relacional, análise com Python e envio automatizado de relatórios em Excel.
-</div>
+## 📊 Relatórios Gerados
 
-<ul>
-    <li>Extração de dados com SQL</li>
-    <li>Transformação e análise com Pandas</li>
-    <li>Geração de relatórios estruturados em Excel</li>
-    <li>Envio automático via SMTP com TLS</li>
-</ul>
+O sistema gera automaticamente relatórios como:
 
-<h2>🏗 Arquitetura</h2>
+- 📈 Taxa de Turnover Mensal  
+- 🏢 Distribuição de Funcionários por Departamento  
+- 👥 Perfil Demográfico (idade e gênero)  
+- 💰 Informações de Folha de Pagamento  
 
-<div class="card">
-Banco de Dados Relacional → Processamento Python → Geração Excel → Envio Automatizado
-</div>
+Cada relatório é exportado para uma aba específica dentro de um arquivo Excel.
 
-<ul>
-    <li>Modelagem relacional normalizada</li>
-    <li>Histórico funcional com controle temporal</li>
-    <li>Consultas analíticas otimizadas</li>
-</ul>
+---
 
-<h2>📊 Indicadores Gerenciais</h2>
+## 📧 Automação de E-mails
 
-<ul>
-    <li>Taxa de Turnover Mensal</li>
-    <li>Distribuição de Funcionários por Departamento</li>
-    <li>Perfil Demográfico (idade e gênero)</li>
-    <li>Análise de Folha de Pagamento</li>
-</ul>
+Após a geração do relatório:
 
-<h2>🛠 Stack Tecnológica</h2>
+- O arquivo Excel é anexado automaticamente
+- O envio é realizado via protocolo SMTP
+- Comunicação segura com TLS
+- Processo totalmente automatizado
 
-<div class="tag-container">
-    <span>Python 3</span>
-    <span>Pandas</span>
-    <span>SQL</span>
-    <span>MySQL</span>
-    <span>PostgreSQL</span>
-    <span>OpenPyXL</span>
-    <span>SMTP</span>
-    <span>Psycopg2</span>
-</div>
+---
 
-<h2>▶ Execução</h2>
+## ▶️ Como Executar o Projeto
 
-<p><strong>1. Criar Banco:</strong></p>
-<div class="code-box">
-use myhr;
--- Executar script SQL incluído
-</div>
+### 1️⃣ Criar o Banco de Dados
 
-<p><strong>2. Instalar Dependências:</strong></p>
-<div class="code-box">
+Execute o script SQL incluído no repositório:
+
+```sql
+USE myhr;
+-- Execute o script completo de criação das tabelas
+```
+
+### 2️⃣ Instalar Dependências
+
+```bash
 pip install pandas psycopg2 openpyxl
-</div>
+```
 
-<p><strong>3. Executar:</strong></p>
-<div class="code-box">
+### 3️⃣ Configurar Conexão com Banco
+
+No arquivo Python, configure:
+
+```python
+host = "seu_host"
+database = "myhr"
+user = "seu_usuario"
+password = "sua_senha"
+```
+
+### 4️⃣ Executar o Script
+
+```bash
 python main.py
-</div>
+```
 
-<h2>🎯 Resultados</h2>
+---
 
-<ul>
-    <li>Redução de tempo operacional</li>
-    <li>Eliminação de erros manuais</li>
-    <li>Automação completa de relatórios</li>
-    <li>Solução escalável e reutilizável</li>
-</ul>
+## 🎯 Resultados
 
-<h2>🔮 Evoluções Futuras</h2>
+A solução proporciona:
 
-<ul>
-    <li>Dashboard interativo (Dash / Power BI)</li>
-    <li>Integração com APIs corporativas</li>
-    <li>Modelos preditivos de turnover</li>
-</ul>
+- ✅ Redução significativa de tempo operacional  
+- ✅ Eliminação de erros manuais  
+- ✅ Entrega automática e pontual de relatórios  
+- ✅ Escalabilidade para novos indicadores  
 
-<div class="footer">
-Gabriel Henrique Silva Maia <br>
-Engenharia de Sistemas • UFMG <br>
-Belo Horizonte – MG
-</div>
+---
 
-</div>
+## 🚀 Possíveis Melhorias Futuras
 
-</body>
-</html>
+- Integração com APIs ou sistemas ERP
+- Dashboard interativo (Power BI ou Dash)
+- Logs detalhados de envio de e-mail
+- Aplicação de Machine Learning para análise preditiva
+
+---
+
+## 👨‍💻 Autor
+
+**Gabriel Henrique Silva Maia**  
+Universidade Federal de Minas Gerais  
+Belo Horizonte - MG  

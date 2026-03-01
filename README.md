@@ -3,57 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Métodos e Ciências dos Dados - Automação de RH</title>
+<title>Automação de Relatórios de RH | Gabriel Maia</title>
 
 <style>
     body {
-        font-family: "Segoe UI", Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f6f9;
-        color: #2c3e50;
-        line-height: 1.6;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #0f1117;
+        color: #e6edf3;
+        line-height: 1.7;
     }
 
     .container {
-        max-width: 1000px;
-        margin: 40px auto;
-        padding: 40px;
-        background: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 50px;
+        background: #161b22;
+        border-radius: 16px;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
     }
 
     h1 {
-        font-size: 32px;
-        margin-bottom: 5px;
-        color: #1a1a1a;
+        font-size: 36px;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #00c6ff, #0072ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     h2 {
+        margin-top: 50px;
         font-size: 22px;
-        margin-top: 40px;
-        border-left: 5px solid #2c3e50;
-        padding-left: 10px;
+        border-left: 4px solid #0072ff;
+        padding-left: 12px;
+        color: #ffffff;
     }
 
-    h3 {
-        font-size: 18px;
-        margin-top: 20px;
-        color: #34495e;
-    }
-
-    .subtitle {
-        font-size: 18px;
-        color: #7f8c8d;
-        margin-bottom: 20px;
-    }
-
-    hr {
-        margin: 30px 0;
-        border: none;
-        height: 1px;
-        background: #e0e0e0;
+    p {
+        color: #c9d1d9;
     }
 
     ul {
@@ -62,33 +50,74 @@
 
     li {
         margin-bottom: 8px;
+        color: #c9d1d9;
     }
 
-    .highlight {
-        background: #ecf0f1;
-        padding: 12px;
-        border-radius: 6px;
-        margin: 10px 0;
-        font-family: Consolas, monospace;
-        font-size: 14px;
+    .subtitle {
+        font-size: 18px;
+        color: #8b949e;
+        margin-bottom: 25px;
     }
 
-    .tech-stack span {
+    .tag-container span {
         display: inline-block;
-        background: #2c3e50;
-        color: #fff;
-        padding: 6px 12px;
-        margin: 5px 5px 5px 0;
+        background: #21262d;
+        color: #58a6ff;
+        border: 1px solid #30363d;
+        padding: 6px 14px;
+        margin: 6px 6px 6px 0;
         border-radius: 20px;
         font-size: 13px;
+        transition: 0.3s;
+    }
+
+    .tag-container span:hover {
+        background: #0072ff;
+        color: #fff;
+        transform: scale(1.05);
+    }
+
+    .code-box {
+        background: #0d1117;
+        border: 1px solid #30363d;
+        padding: 15px;
+        border-radius: 10px;
+        font-family: Consolas, monospace;
+        font-size: 14px;
+        color: #58a6ff;
+        margin: 10px 0 20px 0;
+    }
+
+    .card {
+        background: #1c2128;
+        padding: 20px;
+        border-radius: 12px;
+        margin: 15px 0;
+        border: 1px solid #30363d;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        border-color: #0072ff;
+        box-shadow: 0 0 15px rgba(0,114,255,0.3);
     }
 
     .footer {
-        margin-top: 50px;
+        margin-top: 60px;
         text-align: center;
         font-size: 14px;
-        color: #7f8c8d;
+        color: #8b949e;
     }
+
+    a {
+        color: #58a6ff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
 </style>
 </head>
 
@@ -96,78 +125,52 @@
 
 <div class="container">
 
-<h1>📊 Métodos e Ciências dos Dados</h1>
-<div class="subtitle">Automação de Relatórios de RH com Python</div>
+<h1>Automação de Relatórios de RH</h1>
+<div class="subtitle">Projeto de Engenharia de Dados e Automação • Python • SQL</div>
 
 <p>
-Projeto desenvolvido como trabalho final da disciplina 
-<strong>Métodos e Ciências dos Dados</strong> – 
-<strong>Universidade Federal de Minas Gerais (UFMG)</strong>.
+Projeto desenvolvido como trabalho final da disciplina <strong>Métodos e Ciências dos Dados</strong>,
+na <strong>Universidade Federal de Minas Gerais (UFMG)</strong>.
 </p>
 
-<hr>
+<h2>🚀 Visão Geral</h2>
 
-<h2>📌 Visão Geral</h2>
-
-<p>
-Sistema automatizado para extração, processamento e envio de relatórios gerenciais de Recursos Humanos.
-A solução integra banco de dados relacional, análise de dados com Python e envio automatizado de relatórios em Excel.
-</p>
+<div class="card">
+Sistema automatizado para extração, processamento e envio de relatórios estratégicos de Recursos Humanos.
+Integra banco de dados relacional, análise com Python e envio automatizado de relatórios em Excel.
+</div>
 
 <ul>
-    <li>Extração de dados via SQL</li>
-    <li>Processamento com Pandas</li>
-    <li>Geração de relatórios em Excel</li>
-    <li>Envio automático via SMTP</li>
+    <li>Extração de dados com SQL</li>
+    <li>Transformação e análise com Pandas</li>
+    <li>Geração de relatórios estruturados em Excel</li>
+    <li>Envio automático via SMTP com TLS</li>
 </ul>
 
-<hr>
+<h2>🏗 Arquitetura</h2>
 
-<h2>🏗 Arquitetura da Solução</h2>
+<div class="card">
+Banco de Dados Relacional → Processamento Python → Geração Excel → Envio Automatizado
+</div>
 
 <ul>
-    <li><strong>Banco de Dados Relacional</strong> (MySQL/PostgreSQL)</li>
-    <li><strong>Camada de Processamento</strong> em Python</li>
-    <li><strong>Geração de Relatórios</strong> com OpenPyXL</li>
-    <li><strong>Envio Automatizado</strong> com SMTP + TLS</li>
+    <li>Modelagem relacional normalizada</li>
+    <li>Histórico funcional com controle temporal</li>
+    <li>Consultas analíticas otimizadas</li>
 </ul>
 
-<hr>
-
-<h2>🗄 Estrutura do Banco de Dados</h2>
-
-<p>Modelo relacional desenvolvido para simulação de um sistema completo de RH:</p>
-
-<ul>
-    <li>Departamentos</li>
-    <li>Cargos</li>
-    <li>Contrato (chave composta)</li>
-    <li>Histórico de Cargos</li>
-    <li>Histórico de Situação Funcional</li>
-    <li>Folha de Pagamento</li>
-    <li>Férias</li>
-</ul>
-
-<p>
-A modelagem utiliza integridade referencial, controle de histórico funcional e estrutura preparada para análise gerencial.
-</p>
-
-<hr>
-
-<h2>📊 Indicadores Gerados</h2>
+<h2>📊 Indicadores Gerenciais</h2>
 
 <ul>
     <li>Taxa de Turnover Mensal</li>
     <li>Distribuição de Funcionários por Departamento</li>
     <li>Perfil Demográfico (idade e gênero)</li>
-    <li>Indicadores de Folha de Pagamento</li>
+    <li>Análise de Folha de Pagamento</li>
 </ul>
 
-<hr>
+<h2>🛠 Stack Tecnológica</h2>
 
-<h2>🛠 Tecnologias Utilizadas</h2>
-
-<div class="tech-stack">
+<div class="tag-container">
     <span>Python 3</span>
     <span>Pandas</span>
     <span>SQL</span>
@@ -178,62 +181,45 @@ A modelagem utiliza integridade referencial, controle de histórico funcional e 
     <span>Psycopg2</span>
 </div>
 
-<hr>
+<h2>▶ Execução</h2>
 
-<h2>▶ Execução do Projeto</h2>
-
-<h3>1. Criar Banco de Dados</h3>
-<div class="highlight">
+<p><strong>1. Criar Banco:</strong></p>
+<div class="code-box">
 use myhr;
--- Executar script SQL completo incluído no repositório
+-- Executar script SQL incluído
 </div>
 
-<h3>2. Instalar Dependências</h3>
-<div class="highlight">
+<p><strong>2. Instalar Dependências:</strong></p>
+<div class="code-box">
 pip install pandas psycopg2 openpyxl
 </div>
 
-<h3>3. Configurar Credenciais no Script Python</h3>
-<div class="highlight">
-host=
-database=
-user=
-password=
-</div>
-
-<h3>4. Executar</h3>
-<div class="highlight">
+<p><strong>3. Executar:</strong></p>
+<div class="code-box">
 python main.py
 </div>
 
-<hr>
-
-<h2>🎯 Resultados Obtidos</h2>
+<h2>🎯 Resultados</h2>
 
 <ul>
-    <li>Redução significativa de tempo operacional</li>
+    <li>Redução de tempo operacional</li>
     <li>Eliminação de erros manuais</li>
-    <li>Envio automático e seguro de relatórios</li>
-    <li>Solução escalável para novos indicadores</li>
+    <li>Automação completa de relatórios</li>
+    <li>Solução escalável e reutilizável</li>
 </ul>
 
-<hr>
-
-<h2>🚀 Melhorias Futuras</h2>
+<h2>🔮 Evoluções Futuras</h2>
 
 <ul>
-    <li>Integração com ERP via API</li>
-    <li>Dashboard interativo (Power BI / Dash)</li>
-    <li>Logs e monitoramento de envio</li>
-    <li>Modelos preditivos com Machine Learning</li>
+    <li>Dashboard interativo (Dash / Power BI)</li>
+    <li>Integração com APIs corporativas</li>
+    <li>Modelos preditivos de turnover</li>
 </ul>
-
-<hr>
 
 <div class="footer">
-<strong>Gabriel Henrique Silva Maia</strong><br>
-Universidade Federal de Minas Gerais – UFMG<br>
-Belo Horizonte, MG
+Gabriel Henrique Silva Maia <br>
+Engenharia de Sistemas • UFMG <br>
+Belo Horizonte – MG
 </div>
 
 </div>
